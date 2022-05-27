@@ -8,7 +8,7 @@ from app.models import TwitterUsernameNftMap
 def nft_view(request, token_id):
     data = {
         "description": "Fitmint OG basics collection",
-        "image": "image1",
+        "image": "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png",
         "name": f"Test nft #{token_id}",
         "tokenId": token_id,
         "attributes": []
@@ -16,7 +16,7 @@ def nft_view(request, token_id):
     if TwitterUsernameNftMap.objects.filter(token_id=token_id).exists():
         twitterUsernameNftMap = TwitterUsernameNftMap.objects.get(token_id=token_id)
         if twitterUsernameNftMap.is_following:
-            data['image'] = 'image2'
+            data['image'] = 'https://media.sproutsocial.com/uploads/2016/02/Landscape-Launch-Animation-Blog-Alt-Loop.gif'
         # else:
         #     if check_if_user_is_following(twitterUsernameNftMap):
         #         data['image'] = 'image2'
