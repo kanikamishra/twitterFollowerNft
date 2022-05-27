@@ -8,7 +8,7 @@ from app.models import TwitterUsernameNftMap
 def nft_view(request, token_id):
     data = {
         "description": "test desc",
-        "image": "https://lh3.googleusercontent.com/kUdkeWVY4FVf4ghJqPHGgbcUXjYGyelS2BD90fVX6FOMtjpQVEhAsyw7N19bBwE2EXaBoMfE6UZbJb9OtmRhDQcZErAsYR85fEBm1w=w600",
+        "image": "https://ipfs.io/ipfs/QmSxjHzZM7gkufj7VstLkCCGjbT2DPv95q7XMW7mZ13zcT?filename=img1.png",
         "name": f"Test nft #{token_id}",
         "tokenId": token_id,
         "attributes": []
@@ -16,7 +16,7 @@ def nft_view(request, token_id):
     if TwitterUsernameNftMap.objects.filter(token_id=token_id).exists():
         twitterUsernameNftMap = TwitterUsernameNftMap.objects.get(token_id=token_id)
         if twitterUsernameNftMap.is_following:
-            data['image'] = 'https://lh3.googleusercontent.com/zok6BR31p98PeWhrUPUD_haFCxZ9-UFPXmENOWrNsSuPFxqQ_p8YNdOz7SkvNvtZxAB51EyYbx2pT-zKJnLD4Ju9K9XFCywbepzBZg=w600'
+            data['image'] = 'https://ipfs.io/ipfs/Qmf8V6Qt45ALX8LudadkFyRygcpPB28jyGgoNE9Ze5s7M3?filename=img2.png'
         # else:
         #     if check_if_user_is_following(twitterUsernameNftMap):
         #         data['image'] = 'image2'
