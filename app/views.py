@@ -8,7 +8,7 @@ from app.models import TwitterUsernameNftMap
 def nft_view(request, token_id):
     data = {
         "description": "test desc",
-        "image": "https://ipfs.io/ipfs/QmSxjHzZM7gkufj7VstLkCCGjbT2DPv95q7XMW7mZ13zcT?filename=img1.png",
+        "image": "https://gateway.pinata.cloud/ipfs/QmSxjHzZM7gkufj7VstLkCCGjbT2DPv95q7XMW7mZ13zcT",
         "name": f"Test nft #{token_id}",
         "tokenId": token_id,
         "attributes": []
@@ -16,7 +16,7 @@ def nft_view(request, token_id):
     if TwitterUsernameNftMap.objects.filter(token_id=token_id).exists():
         twitterUsernameNftMap = TwitterUsernameNftMap.objects.get(token_id=token_id)
         if twitterUsernameNftMap.is_following:
-            data['image'] = 'https://ipfs.io/ipfs/Qmf8V6Qt45ALX8LudadkFyRygcpPB28jyGgoNE9Ze5s7M3?filename=img2.png'
+            data['image'] = 'https://gateway.pinata.cloud/ipfs/Qmf8V6Qt45ALX8LudadkFyRygcpPB28jyGgoNE9Ze5s7M3'
         # else:
         #     if check_if_user_is_following(twitterUsernameNftMap):
         #         data['image'] = 'image2'
